@@ -192,7 +192,7 @@ sample = df.sample(2000)
 
 with driver.session() as session:
     for index, row in sample.iterrows():
-        session.write_transaction(
+        session.execute_write(
             create_tweet,
             row["entity_name"],
             row["sentiment"],
